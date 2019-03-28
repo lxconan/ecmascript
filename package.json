@@ -1,0 +1,20 @@
+{
+  "name": "ecmascript-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial for ECMAScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "ECMAScript"
+  ],
+  "author": "Liu Xia",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-jest": "^24.5.0",
+    "jest": "^24.5.0"
+  }
+}
