@@ -46,4 +46,28 @@ describe('for object', () => {
 
     expect(person.greeting()).toEqual('Hello, I am John');
   });
+
+  it('should destruct object', () => {
+    const person = { name: 'Bob', yearOfBirth: 2019 };
+    const { name } = person;
+
+    const expected = 'Bob';
+    expect(name).toEqual(expected);
+  });
+
+  it('should serialize object to JSON', () => {
+    const person = { name: 'Bob', yearOfBirth: 2019 };
+    const json = JSON.stringify(person);
+
+    const expected = '{"name":"Bob","yearOfBirth":2019}';
+    expect(json).toEqual(expected);
+  });
+
+  it('should parse JSON to object', () => {
+    const json = '{"color":"Red","value":"#ff0000"}';
+    const color = JSON.parse(json);
+
+    const expected = { color: 'Red', value: '#ff0000' };
+    expect(color).toEqual(expected);
+  });
 });
