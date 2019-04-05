@@ -1,4 +1,4 @@
-describe('for variable scopes', () => {
+describe('for variable', () => {
   it('should have function scope for var varaible', () => {
     // eslint-disable-next-line vars-on-top, no-var, no-empty
     for (var i = 0; i <= 5; i += 1) { }
@@ -19,5 +19,14 @@ describe('for variable scopes', () => {
 
     // eslint-disable-next-line no-undef
     expect(expected).toEqual(i);
+  });
+
+  it('should be able to change details of const variable', () => {
+    const constVariable = { name: 'changeit' };
+    constVariable.name = 'new name';
+
+    const expected = 'new name';
+
+    expect(constVariable.name).toEqual(expected);
   });
 });
