@@ -30,7 +30,7 @@ describe('for function', () => {
     function square(x) { return x * x; }
 
     const expected = 36;
-    expect(expected).toEqual(square(6, 'Hello', 4));
+    expect(square(6, 'Hello', 4)).toEqual(expected);
   });
 
   it('should be undefined for not specified parameter', () => {
@@ -42,8 +42,8 @@ describe('for function', () => {
     const expectedForSingleArgument = -5;
     const expectedForTwoArguments = 2;
 
-    expect(expectedForSingleArgument).toEqual(minus(5));
-    expect(expectedForTwoArguments).toEqual(minus(5, 3));
+    expect(minus(5)).toEqual(expectedForSingleArgument);
+    expect(minus(5, 3)).toEqual(expectedForTwoArguments);
   });
 
   it('should specify default parameters', () => {
@@ -56,7 +56,7 @@ describe('for function', () => {
     }
 
     const expected = 16;
-    expect(expected).toEqual(power(4));
+    expect(power(4)).toEqual(expected);
   });
 
   it('should not modify the original variable', () => {
@@ -73,8 +73,8 @@ describe('for function', () => {
     const expectedReturnValue = 'Changed';
     const expectedWord = 'Origin';
 
-    expect(expectedReturnValue).toEqual(returnValue);
-    expect(expectedWord).toEqual(guessIfIAmChanged);
+    expect(returnValue).toEqual(expectedReturnValue);
+    expect(guessIfIAmChanged).toEqual(expectedWord);
   });
 
   it('should modify the content of the variable', () => {
@@ -91,8 +91,8 @@ describe('for function', () => {
     const expectedName = 'Bob';
     const expectedReturnValueName = 'Bob';
 
-    expect(expectedName).toEqual(person.name);
-    expect(expectedReturnValueName).toEqual(returnValue.name);
+    expect(person.name).toEqual(expectedName);
+    expect(returnValue.name).toEqual(expectedReturnValueName);
   });
 
   it('should capture local variables', () => {
@@ -104,7 +104,7 @@ describe('for function', () => {
     const actual = wrapValue()();
     const expected = 'Hello';
 
-    expect(expected).toEqual(actual);
+    expect(actual).toEqual(expected);
   });
 
   it('should change captured variable', () => {
@@ -118,7 +118,7 @@ describe('for function', () => {
 
     const expected = 'Changed';
 
-    expect(expected).toEqual(guessIfIAmChanged);
+    expect(guessIfIAmChanged).toEqual(expected);
   });
 
   it('should create some recursion trick', () => {
@@ -135,6 +135,6 @@ describe('for function', () => {
     }
 
     const expected = '(((1 * 3) + 5) * 3)';
-    expect(expected).toEqual(findSolution(24));
+    expect(findSolution(24)).toEqual(expected);
   });
 });

@@ -6,7 +6,7 @@ describe('for variable', () => {
     const expected = 6;
 
     // eslint-disable-next-line block-scoped-var
-    expect(expected).toEqual(i);
+    expect(i).toEqual(expected);
   });
 
   it('should have block scope for let and const variable', () => {
@@ -18,7 +18,7 @@ describe('for variable', () => {
     const expected = 1000;
 
     // eslint-disable-next-line no-undef
-    expect(expected).toEqual(i);
+    expect(i).toEqual(expected);
   });
 
   it('should be able to change details of const variable', () => {

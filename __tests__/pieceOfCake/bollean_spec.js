@@ -10,7 +10,7 @@ describe('for boolean type', () => {
 
     const expected = [true, true, true, true, false, false, false, true];
 
-    expect(expected).toEqual(actual);
+    expect(actual).toEqual(expected);
   });
 
   it('should not perform type conversion for strict equal operator', () => {
@@ -24,6 +24,6 @@ describe('for boolean type', () => {
 
     const expected = [true, false, false, false];
 
-    expect(expected).toEqual(actual);
+    expect(actual).toEqual(expected);
   });
 });
