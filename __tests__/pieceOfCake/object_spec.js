@@ -197,4 +197,64 @@ describe('for object', () => {
     expect(killerRabbit.speak()).toEqual(expectedOverrideKillerRabbitSpeak);
     expect(Rabbit.prototype.speak()).toEqual(expectedRabbitPrototypeSpeak);
   });
+
+  it('should be able to define getter and setter and static method', () => {
+    class Temperature {
+      constructor(celsius) { this.celsius = celsius; }
+
+      get fahrenheit() { return this.celsius * 1.8 + 32; }
+
+      set fahrenheit(value) { this.celsius = (value - 32) / 1.8; }
+
+      static fromFahrenheit(value) { return new Temperature((value - 32) / 1.8); }
+    }
+
+    const expectedFahrenheit = 71.6;
+    expect(new Temperature(22).fahrenheit).toEqual(expectedFahrenheit);
+
+    const expectedCelsius = 30;
+    expect(Temperature.fromFahrenheit(86).celsius).toEqual(expectedCelsius);
+  });
+
+  it('should inherit from existing class', () => {
+    class Rabbit {
+      constructor(type) { this.type = type; }
+
+      speak() { return `I am ${this.type} rabbit`; }
+    }
+
+    class CrazyRabbit extends Rabbit {
+      speak() { return `I am crazy ${this.type} rabbit`; }
+    }
+
+    const rabbit = new CrazyRabbit('white');
+    const expectedSpeak = 'I am crazy white rabbit';
+
+    expect(rabbit.speak()).toEqual(expectedSpeak);
+  });
+
+  it('should determine whether an instance is derived from certain class', () => {
+    class Rabbit {
+      constructor(type) { this.type = type; }
+
+      speak() { return `I am ${this.type} rabbit`; }
+    }
+
+    class CrazyRabbit extends Rabbit {
+      speak() { return `I am crazy ${this.type} rabbit`; }
+    }
+
+    const rabbit = new CrazyRabbit('white');
+    const rabbitIsRabbit = true;
+    expect(rabbit instanceof Rabbit).toEqual(rabbitIsRabbit);
+
+    const rabbitIsCrazyRabbit = true;
+    expect(rabbit instanceof CrazyRabbit).toEqual(rabbitIsCrazyRabbit);
+
+    const rabbitIsObject = true;
+    expect(rabbit instanceof Object).toEqual(rabbitIsObject);
+
+    const rabbitIsNumber = false;
+    expect(rabbit instanceof Number).toEqual(rabbitIsNumber);
+  });
 });
