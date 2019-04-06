@@ -151,4 +151,50 @@ describe('for object', () => {
     expect(prototypeOfRabbitInstance).toBe(expectedPrototypeOfRabbitInstance);
     expect(prototypeOfRabbitFunction).toBe(expectedPrototypeOfRabbitFunction);
   });
+
+  it('should use the class notation rather than the awkward function', () => {
+    class Rabbit {
+      constructor(type) { this.type = type; }
+
+      speak(line) { return `The ${this.type} rabbit says ${line}.`; }
+    }
+
+    const rabbit = new Rabbit('white');
+    const expected = 'The white rabbit says Hi.';
+
+    expect(rabbit.speak('Hi')).toEqual(expected);
+  });
+
+  it('should overriding property of prototype for an instance', () => {
+    class Rabbit {}
+    const killerRabbit = new Rabbit();
+    Rabbit.prototype.teath = 'small';
+
+    const expectedKillerRabbitTeath = 'small';
+    expect(killerRabbit.teath).toEqual(expectedKillerRabbitTeath);
+
+    killerRabbit.teath = 'sharp';
+    const expectedOverrideKillerRabbitTeath = 'sharp';
+    const expectedRabbitPrototypeTeath = 'small';
+    expect(killerRabbit.teath).toEqual(expectedOverrideKillerRabbitTeath);
+    expect(Rabbit.prototype.teath).toEqual(expectedRabbitPrototypeTeath);
+  });
+
+  it('should be the same for method overriding', () => {
+    class Rabbit {}
+    const killerRabbit = new Rabbit();
+    // eslint-disable-next-line func-names
+    Rabbit.prototype.speak = function () { return 'Hi'; };
+
+    const expectedKillerRabbitSpeak = 'Hi';
+    expect(killerRabbit.speak()).toEqual(expectedKillerRabbitSpeak);
+
+    // eslint-disable-next-line func-names
+    killerRabbit.speak = function () { return '@_@'; };
+    const expectedOverrideKillerRabbitSpeak = '@_@';
+    const expectedRabbitPrototypeSpeak = 'Hi';
+
+    expect(killerRabbit.speak()).toEqual(expectedOverrideKillerRabbitSpeak);
+    expect(Rabbit.prototype.speak()).toEqual(expectedRabbitPrototypeSpeak);
+  });
 });
