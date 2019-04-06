@@ -70,4 +70,85 @@ describe('for object', () => {
     const expected = { color: 'Red', value: '#ff0000' };
     expect(color).toEqual(expected);
   });
+
+  it('should point to the object it was called on for "this" in a method', () => {
+    function speak(line) {
+      return `The ${this.type} rabbit says ${line}.`;
+    }
+    const rabbit = { type: 'white', speak };
+
+    const expected = 'The white rabbit says Hello.';
+    expect(rabbit.speak('Hello')).toEqual(expected);
+  });
+
+  it('should explitly specify this using call method', () => {
+    function speak(line) {
+      return `The ${this.type} rabbit says ${line}.`;
+    }
+    const rabbit = { type: 'white', speak };
+
+    speak.call(rabbit, 'Hello');
+    const expected = 'The white rabbit says Hello.';
+    expect(rabbit.speak('Hello')).toEqual(expected);
+  });
+
+  it('should capture this in the scope around it for arrow function', () => {
+    function normalize() {
+      return this.coords.map(n => n / this.length);
+    }
+
+    const actual = normalize.call({ coords: [0, 10, 15], length: 5 });
+
+    const expected = [0, 2, 3];
+    expect(actual).toEqual(expected);
+  });
+
+  it('should get object prototype for an object', () => {
+    const emptyObject = {};
+
+    const expected = Object.prototype;
+    expect(Object.getPrototypeOf(emptyObject)).toBe(expected);
+  });
+
+  it('should get null for object prototype\'s prototype', () => {
+    const objectPrototype = Object.prototype;
+
+    const expected = null;
+    expect(Object.getPrototypeOf(objectPrototype)).toEqual(expected);
+  });
+
+  it('should be able to create object with specified prototype', () => {
+    const rabbitPrototype = {
+      speak(line) { return `The ${this.type} rabbit says ${line}.`; },
+    };
+    const killerRabbit = Object.create(rabbitPrototype);
+    killerRabbit.type = 'killer';
+
+    const words = killerRabbit.speak('SKREEEE');
+    const expected = 'The killer rabbit says SKREEEE.';
+
+    expect(words).toEqual(expected);
+  });
+
+  it('should simulate constructor using function, and use function\'s prototype as definition', () => {
+    function Rabbit(type) { this.type = type; }
+    // eslint-disable-next-line func-names
+    Rabbit.prototype.speak = function (line) { return `The ${this.type} rabbit says ${line}.`; };
+
+    const rabbit = new Rabbit('weird');
+    const expected = 'The weird rabbit says ?_?.';
+
+    expect(rabbit.speak('?_?')).toEqual(expected);
+
+    const prototypeOfRabbitInstance = Object.getPrototypeOf(rabbit);
+    const rabbitFunctionPrototype = Rabbit.prototype;
+    const prototypeOfRabbitFunction = Object.getPrototypeOf(Rabbit);
+    const functionPrototype = Function.prototype;
+
+    const expectedPrototypeOfRabbitInstance = rabbitFunctionPrototype;
+    const expectedPrototypeOfRabbitFunction = functionPrototype;
+
+    expect(prototypeOfRabbitInstance).toBe(expectedPrototypeOfRabbitInstance);
+    expect(prototypeOfRabbitFunction).toBe(expectedPrototypeOfRabbitFunction);
+  });
 });
