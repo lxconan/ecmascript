@@ -33,4 +33,34 @@ describe('for array', () => {
     expect(row).toEqual(expectedRow);
     expect(column).toEqual(expectedColumn);
   });
+
+  it('should filter array', () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const filtered = numbers.filter(n => n % 2 === 0);
+
+    const expected = [2, 4];
+    expect(filtered).toEqual(expected);
+  });
+
+  it('should map array element to other value', () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const mapped = numbers.map((n, i) => `Unit ${n} for element at index ${i}`);
+
+    const expected = [
+      'Unit 1 for element at index 0',
+      'Unit 2 for element at index 1',
+      'Unit 3 for element at index 2',
+      'Unit 4 for element at index 3',
+      'Unit 5 for element at index 4',
+    ];
+    expect(mapped).toEqual(expected);
+  });
+
+  it('should summarize with reduce', () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const reduced = numbers.reduce((prev, current) => prev + current);
+
+    const expected = 15;
+    expect(reduced).toEqual(expected);
+  });
 });

@@ -54,4 +54,11 @@ describe('for strings', () => {
     const expected = 'what->a->beautiful->day';
     expect(splitted.join('->')).toEqual(expected);
   });
+
+  it('should be aware to the codepoint larger than 16-bit', () => {
+    const emoji = '🐴👟';
+
+    const expected = 4;
+    expect(emoji.length).toEqual(expected);
+  });
 });
