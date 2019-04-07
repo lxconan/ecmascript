@@ -1,4 +1,4 @@
-import formatNumber from '../../../src/formatNumber/numberFormatter';
+import formatNumber from '../../../src/exercise_01/numberFormatter';
 
 describe('We would like to format number', () => {
   it('should format number with dollar sign if currency option is specified', () => {
