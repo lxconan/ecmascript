@@ -8,7 +8,10 @@ describe('for boolean type', () => {
       1 == 1, '1' == 1, 1 == '1', 0 == false, 0 == null, objectLeft == objectRight, 0 == undefined, null == undefined,
     ];
 
-    const expected = [true, true, true, true, false, false, false, true];
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(actual).toEqual(expected);
   });
@@ -22,7 +25,10 @@ describe('for boolean type', () => {
       3 === 3, 3 === '3', objectLeft === objectRight, null === undefined,
     ];
 
-    const expected = [true, false, false, false];
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(actual).toEqual(expected);
   });

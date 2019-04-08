@@ -3,7 +3,12 @@ describe('for asynchonous', () => {
     const logs = [];
     setTimeout(() => {
       logs.push('async callback triggered');
-      const expected = ['after calling setTimeout', 'async callback triggered'];
+
+      // <--start
+      // Please write down the correct value. You should write the final result directly.
+      const expected = undefined;
+      // --end->
+
       expect(logs).toEqual(expected);
       done();
     }, 500);
@@ -19,7 +24,12 @@ describe('for asynchonous', () => {
     setTimeoutUsingPromise(500)
       .then(() => {
         logs.push('async callback triggered');
-        const expected = ['after calling setTimeout', 'async callback triggered'];
+
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
+
         expect(logs).toEqual(expected);
         done();
       });
@@ -36,7 +46,11 @@ describe('for asynchonous', () => {
     asyncOperationThatWillFail()
       .then(() => logs.push('Success!'), error => logs.push(`Failed! ${error.message}`))
       .then(() => {
-        const expected = ['Failed! >_<'];
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
+
         expect(logs).toEqual(expected);
         done();
       });
@@ -52,7 +66,11 @@ describe('for asynchonous', () => {
       .then(() => logs.push('Success!'))
       .catch(reason => logs.push(`Catched! ${reason.message}`))
       .then(() => {
-        const expected = ['Catched! >_<'];
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
+
         expect(logs).toEqual(expected);
         done();
       });
@@ -73,9 +91,10 @@ describe('for asynchonous', () => {
       .then(() => logs.push('After error happend'))
       .catch(reason => logs.push(`Error handled: ${reason.message}`))
       .then(() => {
-        const expected = [
-          'Catched! >_<', 'Continued', 'Another continued', 'Error handled: Holy ~',
-        ];
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
         expect(logs).toEqual(expected);
         done();
       });

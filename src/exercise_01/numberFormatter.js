@@ -8,8 +8,5 @@ export default function formatNumber(number, option) {
   // * Please implement the function and pass all the tests in format_number_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  const addDollarSign = option && option.currency;
-  let formatted = number.toFixed(2);
-  if (addDollarSign) { formatted = `$ ${formatted}`; }
-  return formatted;
+  throw new Error('Please delete this line and implement the function');
 }

@@ -9,7 +9,10 @@ describe('for function', () => {
       return innerFunction();
     }
 
-    const expected = 'Hello World';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(outerFunction()).toEqual(expected);
   });
@@ -21,7 +24,10 @@ describe('for function', () => {
       return `${prefixGenerator()} ${name}`;
     }
 
-    const expected = 'Hello World';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(greeting(sayHello, 'World')).toEqual(expected);
   });
@@ -29,7 +35,11 @@ describe('for function', () => {
   it('should allow optional arguments for any function', () => {
     function square(x) { return x * x; }
 
-    const expected = 36;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(square(6, 'Hello', 4)).toEqual(expected);
   });
 
@@ -39,8 +49,11 @@ describe('for function', () => {
       return left - right;
     }
 
-    const expectedForSingleArgument = -5;
-    const expectedForTwoArguments = 2;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expectedForSingleArgument = undefined;
+    const expectedForTwoArguments = undefined;
+    // --end->
 
     expect(minus(5)).toEqual(expectedForSingleArgument);
     expect(minus(5, 3)).toEqual(expectedForTwoArguments);
@@ -55,7 +68,11 @@ describe('for function', () => {
       return result;
     }
 
-    const expected = 16;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(power(4)).toEqual(expected);
   });
 
@@ -70,8 +87,11 @@ describe('for function', () => {
 
     const returnValue = transferToAnotherWord(guessIfIAmChanged);
 
-    const expectedReturnValue = 'Changed';
-    const expectedWord = 'Origin';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expectedReturnValue = undefined;
+    const expectedWord = undefined;
+    // --end->
 
     expect(returnValue).toEqual(expectedReturnValue);
     expect(guessIfIAmChanged).toEqual(expectedWord);
@@ -88,8 +108,11 @@ describe('for function', () => {
 
     const returnValue = addName(person, 'Bob');
 
-    const expectedName = 'Bob';
-    const expectedReturnValueName = 'Bob';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expectedName = undefined;
+    const expectedReturnValueName = undefined;
+    // --end->
 
     expect(person.name).toEqual(expectedName);
     expect(returnValue.name).toEqual(expectedReturnValueName);
@@ -102,7 +125,11 @@ describe('for function', () => {
     }
 
     const actual = wrapValue()();
-    const expected = 'Hello';
+
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(actual).toEqual(expected);
   });
@@ -116,7 +143,10 @@ describe('for function', () => {
 
     wrapValue()();
 
-    const expected = 'Changed';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(guessIfIAmChanged).toEqual(expected);
   });
@@ -134,7 +164,11 @@ describe('for function', () => {
       return find(1, '1');
     }
 
-    const expected = '(((1 * 3) + 5) * 3)';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(findSolution(24)).toEqual(expected);
   });
 
@@ -147,7 +181,11 @@ describe('for function', () => {
       return result;
     }
 
-    const expected = 6;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(sum(1, 2, 3)).toEqual(expected);
   });
 
@@ -160,7 +198,11 @@ describe('for function', () => {
       return result;
     }
 
-    const expected = 6;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     const parameters = [1, 2, 3];
     const actual = sum(...parameters);
 
@@ -179,7 +221,10 @@ describe('for function', () => {
     const parameters = [1, 2, 3];
     const actual = sum(9, ...parameters, 10);
 
-    const expected = 25;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(actual).toEqual(expected);
   });
@@ -191,7 +236,11 @@ describe('for function', () => {
     const labels = [];
     repeat(3, index => labels.push(index * 3));
 
-    const expected = [0, 3, 6];
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(labels).toEqual(expected);
   });
 
@@ -201,7 +250,11 @@ describe('for function', () => {
     }
 
     const greaterThan10 = greaterThan(10);
-    const expected = false;
+
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(greaterThan10(3)).toEqual(expected);
   });
@@ -214,7 +267,11 @@ describe('for function', () => {
     const array = [20, 160, 11];
     const actual = noisy(Math.min)(...array);
 
-    const expected = 11;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(actual).toEqual(expected);
   });
 
@@ -230,7 +287,11 @@ describe('for function', () => {
       unless(n % 2 === 1, () => logs.push(n));
     });
 
-    const expected = [0, 2, 4];
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
+
     expect(logs).toEqual(expected);
   });
 });

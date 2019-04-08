@@ -12,24 +12,5 @@ export default class Vector {
   // * Please do NOT modify the signature of the class. Please put all your code in the Vector
   // class.
 
-  constructor(x, y) {
-    this._x = x;
-    this._y = y;
-  }
-
-  get x() { return this._x; }
-
-  get y() { return this._y; }
-
-  static minus(left, right) {
-    return new Vector(left.x - right.x, left.y - right.y);
-  }
-
-  static plus(left, right) {
-    return new Vector(left.x + right.x, left.y + right.y);
-  }
-
-  distance() {
-    return Math.sqrt(this.x * this.x + this.y * this.y);
-  }
+  // PLEASE DELETE THIS LINE AND ADD YOUR IMPLEMENTATION HERE
 }

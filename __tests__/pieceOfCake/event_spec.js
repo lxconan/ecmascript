@@ -14,7 +14,11 @@ describe('for event', () => {
       done();
     }
 
-    element.addListener('click', onClick);
+    // <--start
+    // Please add the event listener to handle `click` event on `element`.
+
+    // --end->
+
     element.emit('click');
   }, 1000 /* 1 second to timeout */);
 
@@ -28,7 +32,11 @@ describe('for event', () => {
 
     waitForEvents()
       .then(() => {
-        const expected = ['I have been clicked', 'I have been clicked'];
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
+
         expect(logs).toEqual(expected);
         done();
       });
@@ -47,7 +55,11 @@ describe('for event', () => {
 
     waitForEvents()
       .then(() => {
-        const expected = ['I have been clicked'];
+        // <--start
+        // Please write down the correct value. You should write the final result directly.
+        const expected = undefined;
+        // --end->
+
         expect(logs).toEqual(expected);
         done();
       });

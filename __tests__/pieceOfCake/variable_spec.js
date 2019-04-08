@@ -3,7 +3,10 @@ describe('for variable', () => {
     // eslint-disable-next-line vars-on-top, no-var, no-empty
     for (var i = 0; i <= 5; i += 1) { }
 
-    const expected = 6;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     // eslint-disable-next-line block-scoped-var
     expect(i).toEqual(expected);
@@ -15,7 +18,10 @@ describe('for variable', () => {
     // eslint-disable-next-line no-empty, no-shadow
     for (let i = 0; i <= 5; i += 1) { }
 
-    const expected = 1000;
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     // eslint-disable-next-line no-undef
     expect(i).toEqual(expected);
@@ -25,7 +31,10 @@ describe('for variable', () => {
     const constVariable = { name: 'changeit' };
     constVariable.name = 'new name';
 
-    const expected = 'new name';
+    // <--start
+    // Please write down the correct value. You should write the final result directly.
+    const expected = undefined;
+    // --end->
 
     expect(constVariable.name).toEqual(expected);
   });
