@@ -1,5 +1,6 @@
 import formatNumber from '../../../src/exercise_01/numberFormatter';
 
+// Please do NOT modifiy the code in this file.
 describe('We would like to format number', () => {
   it('should format number with dollar sign if currency option is specified', () => {
     const formatted = formatNumber(2, { currency: true });

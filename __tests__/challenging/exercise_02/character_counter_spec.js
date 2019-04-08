@@ -1,5 +1,6 @@
 import countCharacter from '../../../src/exercise_02/characterCounter';
 
+// Please do NOT modifiy the code in this file.
 describe('for count character', () => {
   it('should return 0 for null or undefined string', () => {
     expect(countCharacter()).toEqual(0);

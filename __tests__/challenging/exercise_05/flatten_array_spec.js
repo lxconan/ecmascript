@@ -1,5 +1,6 @@
 import flattenArray from '../../../src/exercise_05/flattenArray';
 
+// Please do NOT modifiy the code in this file.
 describe('for flatten array', () => {
   it('should throw if array is null or undefined', () => {
     expect(() => flattenArray()).toThrowError('Flatten undefined or null array');

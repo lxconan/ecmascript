@@ -1,6 +1,7 @@
 import waitForAll from '../../../src/exercise_07/waitForAll';
 import Stopwatch from '../../../src/util/stopwatch';
 
+// Please do NOT modifiy the code in this file.
 describe('for wait for all', () => {
   function createDelayedPromise(delayInMs, success = true) {
     return new Promise((resolve, reject) => {

@@ -1,5 +1,6 @@
 import arrayToList from '../../../src/exercise_04/arrayToList';
 
+// Please do NOT modifiy the code in this file.
 describe('for array to list', () => {
   it('should throw if array is not defined or empty', () => {
     expect(() => arrayToList()).toThrowError('Creating list from undefined array');

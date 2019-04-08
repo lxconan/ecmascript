@@ -1,5 +1,6 @@
 import Vector from '../../../src/exercise_06/vector';
 
+// Please do NOT modifiy the code in this file.
 describe('for vector', () => {
   it('should get x and y part of the vector', () => {
     const vector = new Vector(2, 3);
